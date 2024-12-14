@@ -108,7 +108,7 @@ import paramiko
 
 ssh_client = paramiko.SSHClient()
 ssh_client.set_missing_host_key_policy(paramiko.MissingHostKeyPolicy())
-ssh_client.connect("10.4.0.38",port=22,username="naveen",password="naveen")
+ssh_client.connect("10.12.0.100",port=22,username="<username>",password="<password>")
 print("server connected")
 command = "hostnamectl"
 stdin, stdout, stderr = ssh_client.exec_command(command)
