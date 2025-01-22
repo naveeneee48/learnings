@@ -1,8 +1,11 @@
 provider "aws" {
-    region = "us-east-1"  # Set your desired AWS region
+  region = "us-west-2"
 }
 
-resource "aws_instance" "example" {
-    ami           = "ami-0c55b159cbfafe1f0"  # Specify an appropriate AMI ID
-    instance_type = "t2.micro"
+module "ec2_instance" {
+  source              = "./module/ec2_instances"
+  ami_value           = "ami-055e3d4f0bbeb5878"
+  instance_type_value = "t2.micro"
+  tag_for_instance    = "naveen-server"
+  key_value_pair      = "cyberblitz-attack"
 }
